@@ -14,7 +14,7 @@ export default defineConfig({
   themeConfig: {
     nav,
     sidebar,
-    socialLinks: [{ icon: 'github', link: '' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/nian6/vui' }],
   },
   markdown: {
     config(md) {
