@@ -1,0 +1,31 @@
+.layout {
+  .v-header,
+  .v-footer,
+  .v-main,
+  .v-aside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .v-header,
+  .v-footer {
+    background-color: var(--v-color-primary-light-7);
+    color: var(--v-text-color-primary);
+    text-align: center;
+  }
+
+  .v-aside {
+    background-color: var(--v-color-primary-light-8);
+    color: var(--v-text-color-primary);
+    text-align: center;
+  }
+
+  .v-main {
+    background-color: var(--v-color-primary-light-9);
+    color: var(--v-text-color-primary);
+    text-align: center;
+
+    height: 150px;
+  }
+}

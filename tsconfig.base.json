@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "es2018",
+    "module": "esnext",
+    "baseUrl": ".",
+    "rootDir": ".",
+    "sourceMap": false,
+    "allowJs": false,
+    "strict": true,
+    "moduleResolution": "node", // 模块解析策略
+    "noUnusedLocals": true, // 检查未使用的局部变量
+    "resolveJsonModule": true, // 支持导入 JSON 模块
+    "allowSyntheticDefaultImports": true, // 允许合成默认导入
+    "esModuleInterop": true, // 启用 ES 模块互操作性
+    "removeComments": false, // 是否移除注释
+    "preserveSymlinks": true, // 保留符号链接
+    "paths": {
+      "@vui/components": ["packages/components"],
+      "@vui/utils": ["packages/utils"],
+      "@vui/hooks": ["packages/hooks"],
+      "vui": ["packages/vui"]
+    }
+  }
+}

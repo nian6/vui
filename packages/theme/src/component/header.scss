@@ -1,0 +1,15 @@
+@use '../mixin/var' as *;
+@use '../mixin/function' as *;
+@use '../mixin/utils' as *;
+@use '../component/var' as *;
+
+@include b(header) {
+  @include set-css-var-map('header', $header);
+}
+
+@include b(header) {
+  padding: getCssVar('header-padding');
+  box-sizing: border-box;
+  flex-shrink: 0;
+  height: getCssVar('header-height');
+}

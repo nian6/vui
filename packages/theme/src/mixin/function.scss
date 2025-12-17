@@ -1,0 +1,18 @@
+@use 'config';
+
+// 拼接css变量名
+// joinCssVarName(('button', 'text-color')) => '--v-button-text-color'
+@function joinCssVarName($list) {
+  $name: '--' + config.$namespace;
+  @each $item in $list {
+    @if $item != '' {
+      $name: $name + '-' + $item;
+    }
+  }
+  @return $name;
+}
+
+// getCssVar('button', 'text-color') => var(--v-button-text-color)
+@function getCssVar($args...) {
+  @return var(#{joinCssVarName($args)});
+}

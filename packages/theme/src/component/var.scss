@@ -1,0 +1,107 @@
+// 各组件的私有css变量
+@use 'sass:map';
+
+@use '../mixin/function' as *;
+@use '../common/var.scss' as *;
+
+// Button
+$button: () !default;
+$button: map.merge(
+  (
+    'border-color': getCssVar('border-color'),
+    'bg-color': getCssVar('fill-color', 'blank'),
+    'text-color': getCssVar('text-color', 'regular'),
+    'disabled-text-color': getCssVar('text-color', 'disabled'),
+    'disabled-bg-color': getCssVar('fill-color', 'blank'),
+    'disabled-border-color': getCssVar('border-color-light'),
+    'hover-text-color': getCssVar('color-primary'),
+    'hover-bg-color': getCssVar('color-primary', 'light-9'),
+    'hover-border-color': getCssVar('color-primary-light-7'),
+    'divide-border-color': rgba($color-white, 0.5),
+  ),
+  $button
+);
+
+$button-font-size: () !default;
+$button-font-size: map.merge(
+  (
+    'large': getCssVar('font-size', 'base'),
+    'default': getCssVar('font-size', 'base'),
+    'small': getCssVar('font-size', 'extra-small'),
+  ),
+  $button-font-size
+);
+
+$button-padding-horizontal: () !default;
+$button-padding-horizontal: map.merge(
+  (
+    'large': 19px,
+    'default': 15px,
+    'small': 11px,
+  ),
+  $button-padding-horizontal
+);
+
+$button-size: () !default;
+$button-size: map.merge(
+  (
+    'large': getCssVar('common-component-size', 'large'),
+    'default': getCssVar('common-component-size', 'default'),
+    'small': getCssVar('common-component-size', 'small'),
+  ),
+  $button-size
+);
+
+// Header
+$header: () !default;
+$header: map.merge(
+  (
+    'height': 60px,
+    'padding': 0 20px,
+  ),
+  $header
+);
+
+// Main
+$main: () !default;
+$main: map.merge(
+  (
+    'padding': 20px,
+  ),
+  $main
+);
+
+// Footer
+$footer: () !default;
+$footer: map.merge(
+  (
+    'height': 60px,
+    'padding': 0 20px,
+  ),
+  $footer
+);
+
+// Text
+$text: () !default;
+$text: map.merge(
+  (
+    'color': getCssVar('text-color', 'regular'),
+    'font-size': getCssVar('font-size', 'base'),
+  ),
+  $text
+);
+
+$text-size: () !default;
+$text-size: map.merge(
+  (
+    'large': (
+      'font-size',
+      'medium',
+    ),
+    'small': (
+      'font-size',
+      'extra-small',
+    ),
+  ),
+  $text-size
+);

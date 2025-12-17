@@ -1,0 +1,82 @@
+@use '../common/var' as *;
+@use '../mixin/utils' as *;
+@use '../mixin/var' as *;
+@use '../mixin/function' as *;
+
+@use 'var' as *;
+@use '_/button' as *;
+
+@include b(button) {
+  @include set-css-var-map('button', $button);
+  @include set-css-var-map('button-size', $button-size);
+}
+
+@include b(button) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: getCssVar('button', 'bg-color');
+  color: getCssVar('button', 'text-color');
+  border-color: getCssVar('button', 'border-color');
+  transition: 0.1s;
+  border-width: getCssVar('border-width');
+  border-style: getCssVar('border-style');
+  border-radius: getCssVar('border-radius', 'base');
+  cursor: pointer;
+  user-select: none;
+  box-sizing: border-box;
+  text-decoration: inherit;
+  @include button-size('default');
+
+  &:hover {
+    background-color: getCssVar('button', 'hover', 'bg-color');
+    color: getCssVar('button', 'hover', 'text-color');
+    border-color: getCssVar('button', 'hover', 'border-color');
+  }
+
+  &:disabled {
+    background-color: getCssVar('button', 'disabled', 'bg-color');
+    color: getCssVar('button', 'disabled', 'text-color');
+    border-color: getCssVar('button', 'disabled', 'border-color');
+    cursor: not-allowed;
+  }
+
+  @each $type in (primary, success, warning, danger, info) {
+    @include m($type) {
+      @include button-variant($type);
+    }
+  }
+
+  @each $size in (large, small) {
+    @include m($size) {
+      @include button-size($size);
+    }
+  }
+
+  @include when(round) {
+    border-radius: getCssVar('border-radius', 'round');
+  }
+
+  @include when(text) {
+    color: getCssVar('button', 'text-color');
+    border: 0 solid transparent;
+    background-color: transparent;
+
+    &:hover {
+      background-color: getCssVar('fill', 'color-light');
+    }
+
+    &:disabled {
+      color: getCssVar('button', 'disabled', 'text-color');
+      background-color: transparent !important;
+    }
+
+    @include when(bg) {
+      background-color: getCssVar('fill', 'color-light');
+
+      &:hover {
+        background-color: getCssVar('fill', 'color');
+      }
+    }
+  }
+}

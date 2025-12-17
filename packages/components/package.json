@@ -1,0 +1,6 @@
+{
+  "name": "@vui/components",
+  "peerDependencies": {
+    "vue": "^3.5.18"
+  }
+}

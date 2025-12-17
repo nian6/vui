@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.web.json",
+  "compilerOptions": {
+    "composite": true
+  },
+  "include": [
+    "packages",
+
+    "playground/main.ts",
+    "playground/App.vue",
+    "playground/env.d.ts",
+    "playground/src"
+  ],
+  "exclude": []
+}

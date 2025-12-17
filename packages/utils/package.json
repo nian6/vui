@@ -1,0 +1,8 @@
+{
+  "name": "@vui/utils",
+  "private": true,
+  "main": "index.ts",
+  "peerDependencies": {
+    "vue": "^3.5.18"
+  }
+}

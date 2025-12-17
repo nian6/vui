@@ -1,0 +1,26 @@
+@use '../mixin/utils' as *;
+@use '../mixin/config' as *;
+@use '../mixin/function' as *;
+
+@include b(button-group) {
+  display: inline-block;
+  vertical-align: middle;
+
+  & > .#{$namespace}-button {
+    &:first-child {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right-color: getCssVar('button', 'divide-border-color');
+      margin-right: -1px;
+    }
+    &:last-child {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left-color: getCssVar('button', 'divide-border-color');
+    }
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+      border-left-color: getCssVar('button', 'divide-border-color');
+    }
+  }
+}

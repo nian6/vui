@@ -1,0 +1,46 @@
+{
+  "private": true,
+  "packageManager": "pnpm@10.15.1",
+  "scripts": {
+    "dev": "pnpm -C playground dev",
+    "format": "prettier --write --cache .",
+    "lint": "eslint . --ext .vue,.js,.ts,.json,.md --max-warnings 0 --cache",
+    "lint:fix": "pnpm lint --fix",
+    "typecheck": "pnpm run \"/^typecheck:/\"",
+    "typecheck:web": "vue-tsc -p tsconfig.web.json --composite false --noEmit",
+    "typecheck:play": "vue-tsc -p tsconfig.play.json --composite false --noEmit",
+    "typecheck:node": "tsc -p tsconfig.node.json --noEmit",
+    "typecheck:vite-config": "vue-tsc -p tsconfig.vite-config.json --composite false --noEmit",
+    "dev:docs": "pnpm -C docs dev",
+    "build:docs": "pnpm -C docs build",
+    "preview:docs": "pnpm -C docs preview",
+    "prepare": "husky"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.18"
+  },
+  "dependencies": {
+    "@vui/components": "workspace:*",
+    "@vui/hooks": "workspace:*",
+    "@vui/theme": "workspace:*",
+    "@vui/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@vui/eslint-config": "workspace:*",
+    "eslint": "^9.39.1",
+    "husky": "^9.1.7",
+    "jiti": "^2.6.1",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.7.2",
+    "sass": "^1.94.2",
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.1.5"
+  },
+  "lint-staged": {
+    "*.{vue,js,ts,md,json}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}

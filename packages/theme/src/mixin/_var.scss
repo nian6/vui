@@ -1,0 +1,23 @@
+@use 'function' as *;
+
+// 生成css变量
+@mixin set-css-var-value($key-list, $value) {
+  #{joinCssVarName($key-list)}: #{$value};
+}
+
+// 将单层map中所有内容生成为css变量
+// $prefix: css变量前缀
+@mixin set-css-var-map($prefix-list, $map) {
+  @each $key, $val in $map {
+    @include set-css-var-value(($prefix-list, $key), $val);
+  }
+}
+
+// 根据已有的css变量，生成新的css变量
+// @include css-var-from-global(('button', 'text-color'), ('color', $type))
+// ==> --v-button-text-color: var(--v-color-#{$type});
+@mixin set-css-var-from($key-list, $value-key-list) {
+  $key: joinCssVarName($key-list);
+  $value-key: joinCssVarName($value-key-list);
+  #{$key}: var(#{$value-key});
+}

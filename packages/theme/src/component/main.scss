@@ -1,0 +1,17 @@
+@use '../mixin/function' as *;
+@use '../mixin/utils' as *;
+@use '../mixin/var' as *;
+@use '../component/var' as *;
+
+@include b(main) {
+  @include set-css-var-map('main', $main);
+}
+
+@include b(main) {
+  display: block;
+  flex: 1;
+  flex-basis: auto;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: getCssVar('main-padding');
+}

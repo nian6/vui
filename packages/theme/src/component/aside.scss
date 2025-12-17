@@ -1,0 +1,9 @@
+@use '../mixin/function' as *;
+@use '../mixin/utils' as *;
+
+@include b(aside) {
+  overflow: auto;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: getCssVar('aside', 'width');
+}

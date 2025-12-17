@@ -1,0 +1,15 @@
+{
+  "name": "@vui/docs",
+  "type": "module",
+  "main": "index.md",
+  "scripts": {
+    "dev": "vitepress dev .",
+    "preview": "vitepress preview .",
+    "build": "vitepress build ."
+  },
+  "devDependencies": {
+    "vitepress": "1.6.4",
+    "@vitepress-demo-preview/component": "^2.6.1",
+    "@vitepress-demo-preview/plugin": "^1.4.1"
+  }
+}

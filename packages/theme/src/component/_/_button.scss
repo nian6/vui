@@ -1,0 +1,138 @@
+@use 'sass:map';
+
+@use '../../mixin/var' as *;
+@use '../../mixin/function' as *;
+@use '../../mixin/utils' as *;
+@use '../var' as *;
+
+@mixin _set-button-css-var($button-colors, $type) {
+  @each $state, $map in $button-colors {
+    @each $key, $list in $map {
+      @include set-css-var-value(('button', $state, $key), getCssVar($list...));
+    }
+  }
+}
+
+@mixin _normal-button($type) {
+  $normal-button: (
+    '': (
+      'text-color': (
+        'color',
+        'white',
+      ),
+      'bg-color': (
+        'color',
+        $type,
+      ),
+      'border-color': (
+        'color',
+        $type,
+      ),
+    ),
+    'hover': (
+      'text-color': (
+        'color',
+        'white',
+      ),
+      'bg-color': (
+        'color',
+        $type,
+        'light-3',
+      ),
+      'border-color': (
+        'color',
+        $type,
+        'light-3',
+      ),
+    ),
+    'disabled': (
+      'text-color': (
+        'color',
+        'white',
+      ),
+      'bg-color': (
+        'color',
+        $type,
+        'light-5',
+      ),
+      'border-color': (
+        'color',
+        $type,
+        'light-5',
+      ),
+    ),
+  );
+
+  @include _set-button-css-var($normal-button, $type);
+}
+
+@mixin _plain-button($type) {
+  $plain-button: (
+    '': (
+      'text-color': (
+        'color',
+        $type,
+      ),
+      'bg-color': (
+        'color',
+        $type,
+        'light-9',
+      ),
+      'border-color': (
+        'color',
+        $type,
+        'light-5',
+      ),
+    ),
+    'hover': (
+      'text-color': (
+        'color',
+        'white',
+      ),
+      'bg-color': (
+        'color',
+        $type,
+      ),
+      'border-color': (
+        'color',
+        $type,
+      ),
+    ),
+    'disabled': (
+      'text-color': (
+        'color',
+        $type,
+        'light-5',
+      ),
+      'bg-color': (
+        'color',
+        $type,
+        'light-9',
+      ),
+      'border-color': (
+        'color',
+        $type,
+        'light-8',
+      ),
+    ),
+  );
+
+  @include _set-button-css-var($plain-button, $type);
+}
+
+@mixin button-variant($type) {
+  @include _normal-button($type);
+
+  @include when(plain) {
+    @include _plain-button($type);
+  }
+  @include when(text) {
+    @include _plain-button($type);
+  }
+}
+
+@mixin button-size($size) {
+  font-size: map.get($button-font-size, $size);
+  padding: 0 map.get($button-padding-horizontal, $size);
+  height: getCssVar('button-size', $size);
+}

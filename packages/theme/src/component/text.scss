@@ -1,0 +1,31 @@
+@use 'sass:map';
+
+@use '../common/var.scss' as *;
+@use '../component/var' as *;
+@use '../mixin/function' as *;
+@use '../mixin/var' as *;
+@use '../mixin/utils.scss' as *;
+
+@include b(text) {
+  @include set-css-var-map('text', $text);
+}
+
+@include b(text) {
+  color: getCssVar('text', 'color');
+  font-size: getCssVar('text', 'font-size');
+
+  @each $type in $types {
+    @include m($type) {
+      @include set-css-var-from(('text', 'color'), ('color', $type));
+    }
+  }
+
+  @each $size in (large, small) {
+    @include m($size) {
+      @include set-css-var-from(
+        ('text', 'font-size'),
+        map.get($text-size, $size)
+      );
+    }
+  }
+}
