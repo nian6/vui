@@ -1,0 +1,21 @@
+@use '../mixin/function' as *;
+@use '../mixin/var' as *;
+@use '../mixin/utils' as *;
+
+@include b(icon) {
+  @include set-css-var-value(('icon-color'), inherit);
+  @include set-css-var-value(('icon-size'), inherit);
+}
+
+@include b(icon) {
+  height: 1em;
+  width: 1em;
+  line-height: 1em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  fill: currentColor;
+  color: getCssVar('icon-color');
+  font-size: getCssVar('icon-size');
+}

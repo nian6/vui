@@ -16,6 +16,10 @@ export default [
         text: 'Text 文本',
         link: 'components/text',
       },
+      {
+        text: 'Icon 图标',
+        link: 'components/icon',
+      },
     ],
   },
 ];

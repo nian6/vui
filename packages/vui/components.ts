@@ -7,6 +7,7 @@ import {
   VMain,
 } from '@vui/components/container';
 import { VText } from '@vui/components/text';
+import { VIcon } from '@vui/components/icon';
 
 export default [
   VButton,
@@ -17,4 +18,5 @@ export default [
   VHeader,
   VMain,
   VText,
+  VIcon,
 ];
