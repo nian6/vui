@@ -118,6 +118,7 @@ $bg-color: map.merge(
 
 $border-width: 1px !default;
 $border-style: solid !default;
+$border-color-hover: getCssVar('text-color', 'disabled') !default;
 
 $border-radius: () !default;
 $border-radius: map.merge(
@@ -141,6 +142,17 @@ $font-size: map.merge(
     'extra-small': 12px,
   ),
   $font-size
+);
+
+// Disable Colors
+$disabled: () !default;
+$disabled: map.merge(
+  (
+    'bg-color': getCssVar('fill-color', 'light'),
+    'text-color': getCssVar('text-color', 'placeholder'),
+    'border-color': getCssVar('border-color', 'light'),
+  ),
+  $disabled
 );
 
 $common-component-size: () !default;
