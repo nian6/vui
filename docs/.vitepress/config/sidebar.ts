@@ -22,4 +22,9 @@ export default [
       },
     ],
   },
+  {
+    text: 'Form 表单组件',
+    collapsed: false,
+    items: [{ text: 'Radio 单选框', link: 'components/radio' }],
+  },
 ];

@@ -8,6 +8,7 @@ import {
 } from '@vui/components/container';
 import { VText } from '@vui/components/text';
 import { VIcon } from '@vui/components/icon';
+import { VRadio, VRadioGroup } from '@vui/components/radio';
 
 export default [
   VButton,
@@ -19,4 +20,6 @@ export default [
   VMain,
   VText,
   VIcon,
+  VRadio,
+  VRadioGroup,
 ];

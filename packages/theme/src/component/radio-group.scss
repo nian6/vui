@@ -1,0 +1,9 @@
+@use '../mixin/function' as *;
+@use '../mixin/utils' as *;
+
+@include b(radio-group) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}

@@ -105,3 +105,33 @@ $text-size: map.merge(
   ),
   $text-size
 );
+
+// Radio
+$radio: () !default;
+$radio: map.merge(
+  (
+    'text-color': getCssVar('text-color', 'regular'),
+    'checked-color': getCssVar('color-primary'),
+    'height': getCssVar('common-component-size', 'default'),
+    'font-size': getCssVar('font-size', 'base'),
+    'input-size': getCssVar('radio', 'font-size'),
+    'input-border': getCssVar('border'),
+    'input-bg-color': getCssVar('fill-color', 'blank'),
+  ),
+  $radio
+);
+
+$radio-size: () !default;
+$radio-size: map.merge(
+  (
+    'large': (
+      'font-size': getCssVar('font-size', 'base'),
+      'height': getCssVar('common-component-size', 'large'),
+    ),
+    'small': (
+      'font-size': getCssVar('font-size', 'extra-small'),
+      'height': getCssVar('common-component-size', 'small'),
+    ),
+  ),
+  $radio-size
+);

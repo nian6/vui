@@ -1,0 +1,103 @@
+@use 'sass:map';
+
+@use '../mixin/function' as *;
+@use '../mixin/utils' as *;
+@use '../mixin/var' as *;
+@use '../component/var' as *;
+
+@include b(radio) {
+  @include set-css-var-map('radio', $radio);
+}
+
+@include b(radio) {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: getCssVar('radio', 'text-color');
+  font-size: getCssVar('radio', 'font-size');
+  height: getCssVar('radio', 'height');
+  user-select: none;
+
+  @each $size in (large, small) {
+    @include m($size) {
+      @include set-css-var-map(('radio'), map.get($radio-size, $size));
+    }
+  }
+
+  @include e(input) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    @include e(original) {
+      opacity: 0;
+      outline: none;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+    }
+
+    @include e(inner) {
+      width: getCssVar('radio', 'input-size');
+      height: getCssVar('radio', 'input-size');
+      border: getCssVar('radio', 'input-border');
+      border-radius: 100%;
+      background-color: getCssVar('radio', 'input-bg-color');
+
+      &::after {
+        width: 4px;
+        height: 4px;
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        border-radius: 100%;
+        transition: transform 0.15s ease-in;
+        transform: translate(-50%, -50%) scale(0);
+      }
+    }
+  }
+
+  @include e(label) {
+    padding-left: 8px;
+  }
+
+  @include when(checked) {
+    @include e(label) {
+      color: getCssVar('radio', 'checked-color');
+    }
+
+    @include e(inner) {
+      border-color: getCssVar('radio', 'checked-color');
+      background-color: getCssVar('radio', 'checked-color');
+
+      &::after {
+        background-color: getCssVar('color-white');
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+  }
+
+  @include when(disabled) {
+    cursor: not-allowed;
+
+    @include e(label) {
+      color: getCssVar('text-color', 'placeholder');
+    }
+
+    @include e(inner) {
+      border-color: getCssVar('disabled', 'border-color');
+      background-color: getCssVar('disabled', 'bg-color');
+
+      &::after {
+        background-color: getCssVar('text-color', 'placeholder');
+      }
+    }
+  }
+}
