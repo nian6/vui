@@ -20,6 +20,7 @@
     "vue": "^3.5.18"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.3.2",
     "@vui/components": "workspace:*",
     "@vui/hooks": "workspace:*",
     "@vui/theme": "workspace:*",
