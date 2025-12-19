@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import vueDevtools from 'vite-plugin-vue-devtools';
 
 // 指定使用 Chrome 浏览器打开
 process.env.BROWSER = 'chrome';
@@ -9,5 +10,5 @@ export default defineConfig({
     port: 3000,
     open: true,
   },
-  plugins: [vue()],
+  plugins: [vue(), vueDevtools()],
 });
