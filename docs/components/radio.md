@@ -76,6 +76,12 @@ demo-preview=../examples/radio/border.vue
 | border                | 是否显示边框     | `boolean`                         | false  |
 | disabled              | 是否禁用         | `boolean`                         | false  |
 
+## RadioGroup Events
+
+| 事件名 | 说明                   | 类型                                           |
+| ------ | ---------------------- | ---------------------------------------------- |
+| change | 绑定值变化时触发的事件 | `(value: string \| number \| boolean) => void` |
+
 ## RadioGroup Slots
 
 | 插槽名  | 说明           | 子标签  |
