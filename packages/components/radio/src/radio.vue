@@ -37,6 +37,7 @@ const { radioId, handleChange, actualValue } = useRadio(
         :value="props.value"
         :checked="props.value === actualValue"
         :disabled="props.disabled"
+        :name="props.name"
         @change="handleChange"
       />
       <span :class="[ns.e('inner')]"></span>

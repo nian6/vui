@@ -8,6 +8,10 @@ export interface RadioProps {
   modelValue?: ModelRef<RadioValue | undefined>;
   disabled?: boolean;
   border?: boolean;
+  /**
+   * @description 原生 `name` 属性
+   */
+  name?: string;
 }
 
 export interface RadioEmits {

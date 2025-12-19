@@ -46,13 +46,14 @@ demo-preview=../examples/radio/border.vue
 
 ## Radio Attributes
 
-| 属性名                | 说明           | 类型                              | 默认值 |
-| --------------------- | -------------- | --------------------------------- | ------ |
-| model-value / v-model | 选中项绑定值   | `string` \| `number` \| `boolean` | —      |
-| value                 | 单选框的值     | `string` \| `number` \| `boolean` | —      |
-| disabled              | 是否禁用单选框 | `boolean`                         | —      |
-| size                  | 单选框的尺寸   | `'large'` \| `'small'`            | —      |
-| border                | 是否显示边框   | `boolean`                         | false  |
+| 属性名                | 说明             | 类型                              | 默认值 |
+| --------------------- | ---------------- | --------------------------------- | ------ |
+| model-value / v-model | 选中项绑定值     | `string` \| `number` \| `boolean` | —      |
+| value                 | 单选框的值       | `string` \| `number` \| `boolean` | —      |
+| disabled              | 是否禁用单选框   | `boolean`                         | —      |
+| size                  | 单选框的尺寸     | `'large'` \| `'small'`            | —      |
+| border                | 是否显示边框     | `boolean`                         | false  |
+| name                  | 原生 `name` 属性 | `string`                          | —      |
 
 ## Radio Events
 
