@@ -18,6 +18,7 @@
   font-size: getCssVar('radio', 'font-size');
   height: getCssVar('radio', 'height');
   user-select: none;
+  box-sizing: border-box;
 
   @each $size in (large, small) {
     @include m($size) {
@@ -98,6 +99,29 @@
       &::after {
         background-color: getCssVar('text-color', 'placeholder');
       }
+    }
+  }
+
+  @each $size in (large, small) {
+    @include when(bordered) {
+      @include set-css-var-value(
+        ('radio', 'bordered-padding'),
+        map.get($radio-bordered-padding, $size)
+      );
+    }
+  }
+
+  @include when(bordered) {
+    border: getCssVar('border');
+    border-radius: getCssVar('border-radius', 'base');
+    padding: getCssVar('radio', 'bordered-padding');
+
+    @include when(checked) {
+      border-color: getCssVar('radio', 'checked-color');
+    }
+
+    @include when(disabled) {
+      border-color: getCssVar('disabled', 'border-color');
     }
   }
 }

@@ -25,6 +25,7 @@ const { radioId, handleChange, actualValue } = useRadio(
       ns.m(props.size),
       ns.is('checked', props.value === actualValue),
       ns.is('disabled', props.disabled),
+      ns.is('bordered', props.border),
     ]"
     :for="radioId"
   >

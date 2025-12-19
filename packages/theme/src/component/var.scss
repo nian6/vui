@@ -117,6 +117,7 @@ $radio: map.merge(
     'input-size': getCssVar('radio', 'font-size'),
     'input-border': getCssVar('border'),
     'input-bg-color': getCssVar('fill-color', 'blank'),
+    'bordered-padding': '0 15px 0 9px',
   ),
   $radio
 );
@@ -134,4 +135,13 @@ $radio-size: map.merge(
     ),
   ),
   $radio-size
+);
+
+$radio-bordered-padding: () !default;
+$radio-bordered-padding: map.merge(
+  (
+    'large': '0 19px 0 11px',
+    'small': '0 11px 0 7px',
+  ),
+  $radio-bordered-padding
 );

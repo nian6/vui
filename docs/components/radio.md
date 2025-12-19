@@ -33,9 +33,15 @@ demo-preview=../examples/radio/disabled.vue
 适用于在多个互斥的选项中选择的场景。
 
 结合 `v-radio-group` 元素和子元素 `v-radio` 可以实现单选组， 为 `v-radio-group` 绑定 `v-model`，再为 每一个 `v-radio` 设置好 `value` 属性即可。
-
 ::: preview
 demo-preview=../examples/radio/radio-group.vue
+:::
+
+## 带有边框
+
+设置 `border` 属性为 `true` 可以渲染为带有边框的单选框。
+::: preview
+demo-preview=../examples/radio/border.vue
 :::
 
 ## Radio Attributes
@@ -46,6 +52,7 @@ demo-preview=../examples/radio/radio-group.vue
 | value                 | 单选框的值     | `string` \| `number` \| `boolean` | —      |
 | disabled              | 是否禁用单选框 | `boolean`                         | —      |
 | size                  | 单选框的尺寸   | `'large'` \| `'small'`            | —      |
+| border                | 是否显示边框   | `boolean`                         | false  |
 
 ## Radio Events
 

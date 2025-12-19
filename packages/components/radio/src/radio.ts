@@ -7,6 +7,7 @@ export interface RadioProps {
   size?: 'small' | 'large';
   modelValue?: ModelRef<RadioValue | undefined>;
   disabled?: boolean;
+  border?: boolean;
 }
 
 export interface RadioEmits {
