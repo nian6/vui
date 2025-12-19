@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, provide } from 'vue';
 import { useNamespace } from '@vui/hooks';
-import { type RadioValue } from './radio';
+import type { RadioValue, RadioGroupProps } from './radio';
 import { radioGroupContextKey } from './constants';
 
 defineOptions({
@@ -10,9 +10,11 @@ defineOptions({
 
 const ns = useNamespace('radio-group');
 
+const props = defineProps<RadioGroupProps>();
 const modelValue = defineModel<RadioValue>();
 
 provide(radioGroupContextKey, {
+  props,
   changeValue: (value: RadioValue) => {
     modelValue.value = value;
   },

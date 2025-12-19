@@ -15,3 +15,8 @@ export interface RadioProps {
 export interface RadioEmits {
   (e: 'change', value: RadioProps['value']): void;
 }
+
+export type RadioGroupProps = { modelValue?: RadioValue } & Pick<
+  RadioProps,
+  'border' | 'disabled' | 'size'
+>;

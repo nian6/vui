@@ -69,9 +69,12 @@ demo-preview=../examples/radio/border.vue
 
 ## RadioGroup Attributes
 
-| 属性名                | 说明         | 类型                              | 默认值 |
-| --------------------- | ------------ | --------------------------------- | ------ |
-| model-value / v-model | 选中项绑定值 | `string` \| `number` \| `boolean` | —      |
+| 属性名                | 说明             | 类型                              | 默认值 |
+| --------------------- | ---------------- | --------------------------------- | ------ |
+| model-value / v-model | 选中项绑定值     | `string` \| `number` \| `boolean` | —      |
+| size                  | 单选框按钮的大小 | `'large'` \| `'small'`            | —      |
+| border                | 是否显示边框     | `boolean`                         | false  |
+| disabled              | 是否禁用         | `boolean`                         | false  |
 
 ## RadioGroup Slots
 

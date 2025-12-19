@@ -9,12 +9,16 @@ defineOptions({
 
 const ns = useNamespace('radio');
 
-const props = defineProps<RadioProps>();
+// boolean的prop默认值为false, 这里需要是undefined
+const radioProps = withDefaults(defineProps<RadioProps>(), {
+  border: undefined,
+  disabled: undefined,
+});
 const emit = defineEmits<RadioEmits>();
 const modelValue = defineModel<RadioValue>();
 
-const { radioId, handleChange, actualValue } = useRadio(
-  props,
+const { radioId, handleChange, actualValue, props } = useRadio(
+  radioProps,
   emit,
   modelValue,
 );

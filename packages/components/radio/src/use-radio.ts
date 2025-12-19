@@ -1,4 +1,4 @@
-import { inject, type ModelRef } from 'vue';
+import { computed, inject, reactive, toRefs, type ModelRef } from 'vue';
 import type { RadioValue, RadioEmits, RadioProps } from './radio';
 import { radioGroupContextKey } from './constants';
 
@@ -19,9 +19,17 @@ export const useRadio = (
     radioGroup.changeValue?.(props.value);
   };
 
+  const actualProps = reactive({
+    ...toRefs(props),
+    border: computed(() => props.border ?? radioGroup.props?.border),
+    disabled: computed(() => props.disabled ?? radioGroup.props?.disabled),
+    size: computed(() => props.size ?? radioGroup.props?.size),
+  });
+
   return {
     radioId: generateId(),
     handleChange,
     actualValue: radioGroup.modelValue || modelValue,
+    props: actualProps,
   };
 };
