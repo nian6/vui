@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useNamespace } from '@vui/hooks';
 import { useRadio } from './use-radio';
-import { type RadioProps, type RadioEmits, RadioValue } from './radio';
+import type { RadioProps, RadioEmits, RadioValue } from './radio';
 
 defineOptions({
   name: 'VRadio',
@@ -14,8 +14,9 @@ const emit = defineEmits<RadioEmits>();
 const modelValue = defineModel<RadioValue>();
 
 const { radioId, handleChange, actualValue } = useRadio(
-  { ...props, modelValue },
+  props,
   emit,
+  modelValue,
 );
 </script>
 <template>
