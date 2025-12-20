@@ -3,6 +3,7 @@
   "packageManager": "pnpm@10.15.1",
   "scripts": {
     "test": "vitest",
+    "test:ui": "vitest --ui",
     "dev": "pnpm -C playground dev",
     "format": "prettier --write --cache .",
     "lint": "eslint . --ext .vue,.js,.ts,.json,.md --max-warnings 0 --cache",
@@ -30,6 +31,7 @@
   "devDependencies": {
     "@types/node": "^24.10.1",
     "@vitejs/plugin-vue-jsx": "^5.1.2",
+    "@vitest/ui": "^4.0.16",
     "@vue/test-utils": "^2.4.6",
     "@vui/eslint-config": "workspace:*",
     "eslint": "^9.39.1",
