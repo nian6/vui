@@ -1,7 +1,8 @@
 {
   "extends": "./tsconfig.web.json",
   "compilerOptions": {
-    "composite": true
+    "allowJs": true,
+    "lib": ["ESNext", "DOM", "DOM.Iterable"]
   },
   "include": [
     "packages",
@@ -10,6 +11,5 @@
     "playground/App.vue",
     "playground/env.d.ts",
     "playground/src"
-  ],
-  "exclude": []
+  ]
 }

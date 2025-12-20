@@ -17,7 +17,9 @@
     "preserveSymlinks": true, // 保留符号链接
     "paths": {
       "@vui/components": ["packages/components"],
+      "@vui/components/*": ["packages/components/*"],
       "@vui/utils": ["packages/utils"],
+      "@vui/utils/*": ["packages/utils/*"],
       "@vui/hooks": ["packages/hooks"],
       "vui": ["packages/vui"]
     }

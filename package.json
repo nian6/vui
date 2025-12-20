@@ -2,6 +2,7 @@
   "private": true,
   "packageManager": "pnpm@10.15.1",
   "scripts": {
+    "test": "vitest",
     "dev": "pnpm -C playground dev",
     "format": "prettier --write --cache .",
     "lint": "eslint . --ext .vue,.js,.ts,.json,.md --max-warnings 0 --cache",
@@ -28,14 +29,18 @@
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
+    "@vitejs/plugin-vue-jsx": "^5.1.2",
+    "@vue/test-utils": "^2.4.6",
     "@vui/eslint-config": "workspace:*",
     "eslint": "^9.39.1",
     "husky": "^9.1.7",
     "jiti": "^2.6.1",
+    "jsdom": "^27.3.0",
     "lint-staged": "^16.2.7",
     "prettier": "^3.7.2",
     "sass": "^1.94.2",
     "typescript": "^5.9.3",
+    "vitest": "^4.0.16",
     "vue-tsc": "^3.1.5"
   },
   "lint-staged": {
