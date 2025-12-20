@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import { VText } from 'vui';
-</script>
+<script setup lang="ts"></script>
 <template>
   <div class="play-container">
     <v-text>你好</v-text>
